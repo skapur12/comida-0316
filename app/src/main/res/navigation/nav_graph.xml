@@ -12,17 +12,29 @@
         tools:layout="@layout/fragment_first">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_FirstFragment_to_LoginScreen"
+            app:destination="@+id/LoginScreen" />
+        <action
+            android:id="@+id/action_FirstFragment_to_RegisterScreen"
+            app:destination="@id/RegisterScreen" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.teamcomida.comida_0316.SecondFragment"
+        android:id="@+id/LoginScreen"
+        android:name="com.teamcomida.comida_0316.LoginScreen"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        tools:layout="@layout/screen_login">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            android:id="@+id/action_LoginScreen_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/RegisterScreen"
+        android:name="com.teamcomida.comida_0316.RegisterScreen"
+        android:label="@string/register_screen_label"
+        tools:layout="@layout/activity_register_screen">
+        <action
+            android:id="@+id/action_RegisterScreen_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
 </navigation>

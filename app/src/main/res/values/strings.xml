@@ -5,10 +5,19 @@
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
-    <string name="previous">Previous</string>
     <string name="login_button">Login</string>
     <string name="register_button">Register</string>
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="register_screen_label">Register Screen</string>
+
+    <string name="create_account">Create Account</string>
+
+    <string name="email_text">Email</string>
+    <string name="username_text">Username</string>
+    <string name="password_text">Password</string>
+    <string name="welcome_text">Welcome to Comida!</string>
+
 </resources>
