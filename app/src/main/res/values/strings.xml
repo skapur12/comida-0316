@@ -20,4 +20,6 @@
     <string name="password_text">Password</string>
     <string name="welcome_text">Welcome to Comida!</string>
 
+    <string name="logo_text">Comida\'s logo, which is a blue and purple plate surrounded by a fork and spoon.</string>
+
 </resources>

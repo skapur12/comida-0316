@@ -28,7 +28,8 @@
         app:layout_constraintEnd_toEndOf="parent"
 
         app:layout_constraintHorizontal_bias="0.589"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="@string/logo_text" />
 
     <EditText
         android:id="@+id/editTextTextPersonName3"
@@ -45,7 +46,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
 
-        />
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/editTextTextPassword3"
@@ -59,7 +60,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
+        android:autofillHints="" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

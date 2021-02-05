@@ -12,7 +12,9 @@ import androidx.navigation.fragment.NavHostFragment;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-public class RegisterScreen extends Fragment {
+import android.app.Activity;
+
+public class RegisterScreen extends Fragment{
 
     @Override
     public View onCreateView(
@@ -37,10 +39,11 @@ public class RegisterScreen extends Fragment {
     //get the spinner from the xml.
         Spinner dropdown = (Spinner) view.findViewById(R.id.spinner1);
     //create a list of items for the spinner.
-        String[] items = new String[]{"1", "2", "three"};
+        String[] items = new String[]{"Kennesaw State University", "Georgia Institute of Technology",
+                "Georgia Southern University", "Georgia State University", "University of Georgia"};
     //create an adapter to describe how the items are displayed, adapters are used in several places in android.
     //There are multiple variations of this, but this is the basic variant.
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_dropdown_item, items);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, items);
     //set the spinners adapter to the previously created one.
         dropdown.setAdapter(adapter);
 

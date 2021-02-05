@@ -23,12 +23,7 @@ public class LoginScreen extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        view.findViewById(R.id.button_second).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(LoginScreen.this)
-                        .navigate(R.id.action_LoginScreen_to_FirstFragment);
-            }
-        });
+        view.findViewById(R.id.button_second).setOnClickListener(view1 -> NavHostFragment.findNavController(LoginScreen.this)
+                .navigate(R.id.action_LoginScreen_to_FirstFragment));
     }
 }
