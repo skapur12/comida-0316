@@ -71,4 +71,17 @@
         app:layout_constraintStart_toStartOf="parent"
         android:visibility="invisible"
         />
+
+    <TextView
+        android:id="@+id/forgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot password?"
+        tools:layout_editor_absoluteX="173dp"
+        tools:layout_editor_absoluteY="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar"
+        android:layout_marginBottom="60dp"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
