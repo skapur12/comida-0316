@@ -23,7 +23,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class MainActivity extends AppCompatActivity {
-    TextView fullName, email, verifyMsg;
+    TextView fullName, email, verifyMsg, theUsername;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userId;
@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         fullName = findViewById(R.id.profileName);
         email = findViewById(R.id.profileEmail);
+        theUsername = findViewById(R.id.profileUsername);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -80,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
                     //getting the string using key defined from the document snapshot
                     fullName.setText(documentSnapshot.getString("fName"));
                     email.setText(documentSnapshot.getString("email"));
+                    theUsername.setText(documentSnapshot.getString("username"));
                 }
 
             }

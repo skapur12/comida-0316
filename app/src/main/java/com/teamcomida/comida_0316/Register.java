@@ -29,7 +29,7 @@ import java.util.Map;
 
 
 public class Register extends AppCompatActivity {
-    EditText mFullName, mEmail, mPassword;
+    EditText mFullName, mEmail, mPassword, mUsername;
     Button mRegisterBtn;
     TextView mLoginBtn;
     FirebaseAuth fAuth;
@@ -38,6 +38,8 @@ public class Register extends AppCompatActivity {
     String userID;
 
     public static final String TAG = "TAG";
+
+    Map<String, Integer> sample = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +52,7 @@ public class Register extends AppCompatActivity {
         mRegisterBtn = findViewById(R.id.registerBtn);
         mLoginBtn = findViewById(R.id.createText);
         progressBar = findViewById(R.id.progressBar);
+        mUsername = findViewById(R.id.username);
 
 
         fAuth = FirebaseAuth.getInstance();
@@ -64,10 +67,15 @@ public class Register extends AppCompatActivity {
             String email = mEmail.getText().toString().trim();
             String password = mPassword.getText().toString().trim();
             String fullName = mFullName.getText().toString(); //don't want to trim it
+            String username = mUsername.getText().toString().trim();
 
             if (TextUtils.isEmpty(email)) {
                 mEmail.setError("Email is required.");
                 return;
+            }
+
+            if (TextUtils.isEmpty(username)) {
+                mUsername.setError("Username is required.");
             }
 
             if (TextUtils.isEmpty(password)) {
@@ -81,6 +89,7 @@ public class Register extends AppCompatActivity {
             }
 
             progressBar.setVisibility(View.VISIBLE);
+
 
             //register user in firebase
             fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
@@ -106,8 +115,12 @@ public class Register extends AppCompatActivity {
                     userID = fAuth.getCurrentUser().getUid();
                     DocumentReference documentReference = fStore.collection("users").document(userID);
                     Map<String, Object> user = new HashMap<>();
+
+
                     user.put("fName", fullName);
                     user.put("email", email);
+                    user.put("username", username);
+
                     documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
