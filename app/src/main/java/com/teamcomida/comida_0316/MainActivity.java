@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseFirestore fStore;
     String userId;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,9 +38,14 @@ public class MainActivity extends AppCompatActivity {
         DocumentReference documentReference = fStore.collection("users").document(userId);
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
-            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                fullName.setText(value.getString("fName"));
-                email.setText(value.getString("email"));
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+                if (e!=null){
+                    Log.d("DocumentSnapshot","Error:"+e.getMessage());
+                }else {
+                    //getting the string using key defined from the document snapshot
+                    fullName.setText(documentSnapshot.getString("fName"));
+                    email.setText(documentSnapshot.getString("email"));
+                }
 
             }
         });
