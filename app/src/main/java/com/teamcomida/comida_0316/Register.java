@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -167,11 +168,14 @@ public class Register extends AppCompatActivity implements AdapterView.OnItemSel
     }
 
     @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        ((TextView) parent.getChildAt(0)).setTextColor(Color.BLUE);
+        ((TextView) parent.getChildAt(0)).setTextSize(17);
 
     }
 
-    @Override
+
+        @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
