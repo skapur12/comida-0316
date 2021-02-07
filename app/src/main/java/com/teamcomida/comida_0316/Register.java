@@ -8,8 +8,11 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ProgressBar;
@@ -28,7 +31,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class Register extends AppCompatActivity {
+public class Register extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     EditText mFullName, mEmail, mPassword, mUsername;
     Button mRegisterBtn;
     TextView mLoginBtn;
@@ -36,6 +39,7 @@ public class Register extends AppCompatActivity {
     ProgressBar progressBar;
     FirebaseFirestore fStore;
     String userID;
+    Spinner dropdown;
 
     public static final String TAG = "TAG";
 
@@ -53,6 +57,16 @@ public class Register extends AppCompatActivity {
         mLoginBtn = findViewById(R.id.createText);
         progressBar = findViewById(R.id.progressBar);
         mUsername = findViewById(R.id.username);
+        dropdown = findViewById(R.id.spinner1);
+
+        String[] items = new String[]{"Kennesaw State University",
+                "Georgia Institute of Technology",
+                "Georgia Southern University",
+                "Georgia State University",
+                "University of Georgia"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        dropdown.setAdapter(adapter);
+
 
 
         fAuth = FirebaseAuth.getInstance();
@@ -63,11 +77,17 @@ public class Register extends AppCompatActivity {
             finish();
         }
 
+        dropdown.setOnItemSelectedListener(this);
+
+
         mRegisterBtn.setOnClickListener(v -> {
             String email = mEmail.getText().toString().trim();
             String password = mPassword.getText().toString().trim();
             String fullName = mFullName.getText().toString(); //don't want to trim it
             String username = mUsername.getText().toString().trim();
+            String college = adapter.getItem(dropdown.getSelectedItemPosition()).toString();
+
+
 
             if (TextUtils.isEmpty(email)) {
                 mEmail.setError("Email is required.");
@@ -120,6 +140,7 @@ public class Register extends AppCompatActivity {
                     user.put("fName", fullName);
                     user.put("email", email);
                     user.put("username", username);
+                    user.put("college", college);
 
                     documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
@@ -143,5 +164,15 @@ public class Register extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), com.teamcomida.comida_0316.Login.class));
             }
         });
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }
