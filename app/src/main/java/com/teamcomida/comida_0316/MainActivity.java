@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -48,10 +49,13 @@ public class MainActivity extends AppCompatActivity {
 
         userId = fAuth.getCurrentUser().getUid();
         final FirebaseUser user = fAuth.getCurrentUser();
+        resendCode.setBackgroundColor(Color.GREEN);
+
 
         if (!user.isEmailVerified()) {
             verifyMsg.setVisibility(View.VISIBLE);
             resendCode.setVisibility(View.VISIBLE);
+
 
             resendCode.setOnClickListener(new View.OnClickListener() {
                 @Override
