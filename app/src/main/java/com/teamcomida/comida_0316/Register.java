@@ -162,7 +162,7 @@ public class Register extends AppCompatActivity implements AdapterView.OnItemSel
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), com.teamcomida.comida_0316.Login.class));
+                startActivity(new Intent(getApplicationContext(), Login.class));
             }
         });
     }

@@ -22,5 +22,40 @@
 
     <string name="logo_text">Comida\'s logo, which is a blue and purple plate surrounded by a fork and spoon.</string>
     <string name="college_text">College/University:</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- 85 georgia colleges list: http://www.free-4u.com/Colleges/Georgia-Colleges.html -->
+    <string-array name="colleges_array">
+        <item>Abraham Baldwin Agricultural College</item>
+        <item>Albany State University</item>
+        <item>Atlanta Metropolitan State College</item>
+        <item>Augusta University</item>
+        <item>Clayton State University</item>
+        <item>College of Coastal Georgia</item>
+        <item>Columbus State University</item>
+        <item>Dalton State College</item>
+        <item>East Georgia State College</item>
+        <item>Fort Valley State University</item>
+        <item>Georgia Archives</item>
+        <item>Georgia College and State University</item>
+        <item>Georgia Gwinnett College</item>
+        <item>Georgia Highlands College</item>
+        <item>Georgia Institute of Technology</item>
+        <item>Georgia Public Library Service</item>
+        <item>Georgia Southern University</item>
+        <item>Georgia Southwestern State University</item>
+        <item>Georgia State University</item>
+        <item>Gordon State College</item>
+        <item>Kennesaw State University</item>
+        <item>Middle Georgia State University</item>
+        <item>Savannah State University</item>
+        <item>South Georgia State College</item>
+        <item>University of Georgia</item>
+        <item>University of North Georgia</item>
+        <item>University of West Georgia</item>
+        <item>Valdosta State University</item>
+
+    </string-array>
 
 </resources>
