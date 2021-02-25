@@ -53,7 +53,7 @@ public class CollegeSearch extends AppCompatActivity {
         collegeAdapter = new ArrayAdapter<String>(CollegeSearch.this,
                 android.R.layout.simple_list_item_1, collegeList);
         listView.setAdapter(collegeAdapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() { //querying college data
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //do the query for the college
@@ -61,12 +61,12 @@ public class CollegeSearch extends AppCompatActivity {
                 String college = collegeAdapter.getItem(position);
                 System.out.println(college);
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
-                CollectionReference collegeCollection = db.collection("halls");
+                CollectionReference collegeCollection = db.collection("halls"); //set a pointer the set of documents at the halls collection reference
                 collegeCollection.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) { //looping through each document
                                 /*if(document.getString("college").equals(college)) {
                                     System.out.println(document.getString("name"));
                                 }*/
@@ -132,46 +132,7 @@ public class CollegeSearch extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
 
     }
-    //could possibly just delete this whole method (initSearch)
-    private void initSearch() {
-        /*searchView = (SearchView) findViewById(R.id.collegeSearchView);
-        listView = (ListView) findViewById(R.id.collegeListView);
 
-        String[] colleges = res.getStringArray(R.array.colleges_array);
-        List<String> collegeList = new ArrayList<String>();
-        Collections.addAll(collegeList, colleges);  //collegeList contains all colleges
-        ArrayAdapter<String> collegeAdapter = new ArrayAdapter<String>(getApplicationContext(),
-                android.R.layout.simple_list_item_1, colleges);
-        listView.setAdapter(collegeAdapter);*/
-
-
-        /*searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                if (collegeList.contains(query)) {
-                    collegeAdapter.getFilter().filter(query);
-                } else {
-                    Toast.makeText(CollegeSearch.this, "No matches found",Toast.LENGTH_LONG).show();
-                }
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                ArrayList<String> filteredColleges = new ArrayList<String>();
-                for (String college : collegeList) {
-                    if (college.toLowerCase().contains(newText.toLowerCase())) {
-                        filteredColleges.add(college);
-                    }
-                }
-                ArrayAdapter<String> collegeFilterAdapter = new ArrayAdapter<String>(getApplicationContext(),
-                        android.R.layout.simple_list_item_1, filteredColleges);
-                //ListView collegeView = (ListView) findViewById(R.id.collegeListView);
-                listView.setAdapter(collegeFilterAdapter);
-                return false;
-            }
-        });*/
-    }
 
 }
 
