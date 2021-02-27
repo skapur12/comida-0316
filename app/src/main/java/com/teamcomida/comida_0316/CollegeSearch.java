@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.MenuItemCompat;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -15,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
@@ -38,6 +40,7 @@ public class CollegeSearch extends AppCompatActivity {
     SearchView searchView;
     List<String> collegeList = new ArrayList<String>();
     ArrayAdapter<String> collegeAdapter;
+    ImageView homeButton1, searchButton1, profileButton1;
 
 
     @Override
@@ -45,6 +48,9 @@ public class CollegeSearch extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_college_search);
         listView = (ListView) findViewById(R.id.collegeListView);
+        homeButton1 = findViewById(R.id.homeButton1);
+        searchButton1 = findViewById(R.id.searchButton1);
+        profileButton1 = findViewById(R.id.profileButton1);
         Resources res = getResources();
         String[] colleges = res.getStringArray(R.array.colleges_array);
         Collections.addAll(collegeList, colleges);  //collegeList contains all colleges
@@ -99,6 +105,27 @@ public class CollegeSearch extends AppCompatActivity {
                 return false;
             }
         });
+
+
+
+        //Search, Profile, and Home Directions
+        //Search
+        searchButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), CollegeSearch.class));
+            }
+        });
+
+        //User Profile
+        profileButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            }
+        });
+
+        //Insert Home Button
 
     }
 
