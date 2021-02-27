@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseFirestore fStore;
     String userId;
     Button resendCode, changeProfileImage;
-    ImageView profileImage;
+    ImageView profileImage, homeButton, profileButton, searchButton;
     StorageReference storageReference;
 
 
@@ -51,6 +51,10 @@ public class MainActivity extends AppCompatActivity {
 
         profileImage = findViewById(R.id.profileImage);
         changeProfileImage = findViewById(R.id.changeProfile);
+
+        homeButton = findViewById(R.id.homeButton);
+        searchButton = findViewById(R.id.searchButton);
+        profileButton = findViewById(R.id.profileButton);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -131,6 +135,27 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+
+        //Search, Profile, and Home Directions
+        //Search
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), CollegeSearch.class));
+            }
+        });
+
+        //User Profile
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            }
+        });
+
+        //Insert Home Button
     }
 
     @Override
