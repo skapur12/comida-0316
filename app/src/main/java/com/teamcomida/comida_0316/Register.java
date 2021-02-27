@@ -60,11 +60,34 @@ public class Register extends AppCompatActivity implements AdapterView.OnItemSel
         mUsername = findViewById(R.id.username);
         dropdown = findViewById(R.id.spinner1);
 
-        String[] items = new String[]{"Kennesaw State University",
+        //original items: Kennesaw State University, Georgia Institute of Technology, Georgia Southern University, Georgia State University, University of Georgia
+
+        String[] items = new String[]{"Abraham Baldwin Agricultural College",
+                "Albany State University",
+                "Atlanta Metropolitan State College",
+                "Augusta University",
+                "Clayton State University",
+                "College of Coastal Georgia",
+                "Columbus State University",
+                "Dalton State College",
+                "East Georgia State College",
+                "Fort Valley State University",
+                "Georgia College & State University",
+                "Georgia Gwinnett College",
+                "Georgia Highlands College",
                 "Georgia Institute of Technology",
+                "Georgia Southwestern State University",
                 "Georgia Southern University",
                 "Georgia State University",
-                "University of Georgia"};
+                "Gordon State College",
+                "Kennesaw State University",
+                "Middle Georgia State University",
+                "Savannah State University",
+                "South Georgia State College",
+                "University of Georgia",
+                "University of North Georgia",
+                "University of West Georgia",
+                "Valdosta State University"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
         dropdown.setAdapter(adapter);
 
