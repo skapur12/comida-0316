@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.teamcomida.comida_0316">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Comida0316">
+        <activity android:name=".HomePage"></activity>
         <activity android:name=".Login" />
         <activity android:name=".Register">
             <intent-filter>
@@ -26,11 +25,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CollegeSearch"
-            android:exported="true">
-
-        </activity>
-
+        <activity
+            android:name=".CollegeSearch"
+            android:exported="true"></activity>
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

@@ -125,7 +125,13 @@ public class CollegeSearch extends AppCompatActivity {
             }
         });
 
-        //Insert Home Button
+        //Home Button
+        homeButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), HomePage.class));
+            }
+        });
 
     }
 
