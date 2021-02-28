@@ -63,6 +63,7 @@ public class CollegeSearch extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //do the query for the college
+                startActivity(new Intent(getApplicationContext(), SearchResults.class));
                 Toast.makeText(getApplicationContext(),collegeAdapter.getItem(position),Toast.LENGTH_SHORT).show();
                 String college = collegeAdapter.getItem(position);
                 System.out.println(college);

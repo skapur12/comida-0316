@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Comida0316">
-        <activity android:name=".HomePage"></activity>
+        <activity android:name=".SearchResults"></activity>
+        <activity android:name=".HomePage" />
         <activity android:name=".Login" />
         <activity android:name=".Register">
             <intent-filter>
@@ -27,7 +28,7 @@
         </activity>
         <activity
             android:name=".CollegeSearch"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />
