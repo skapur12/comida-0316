@@ -7,11 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class SearchResults extends AppCompatActivity {
     TextView collegeTitle;
     ImageView homeButton3, profileButton3, searchButton3, backButton;
+    ListView hallListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,7 @@ public class SearchResults extends AppCompatActivity {
         profileButton3 = findViewById(R.id.profileButton3);
         searchButton3 = findViewById(R.id.searchButton3);
         backButton = findViewById(R.id.backButton);
+        hallListView = findViewById(R.id.hallListView);
 
         collegeTitle.setText(CollegeSearch.theSearchedCollege);
 
