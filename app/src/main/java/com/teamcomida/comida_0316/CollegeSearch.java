@@ -41,6 +41,7 @@ public class CollegeSearch extends AppCompatActivity {
     List<String> collegeList = new ArrayList<String>();
     ArrayAdapter<String> collegeAdapter;
     ImageView homeButton1, searchButton1, profileButton1;
+    public static String theSearchedCollege;
 
 
     @Override
@@ -67,6 +68,7 @@ public class CollegeSearch extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),collegeAdapter.getItem(position),Toast.LENGTH_SHORT).show();
                 String college = collegeAdapter.getItem(position);
                 System.out.println(college);
+                theSearchedCollege = collegeAdapter.getItem(position);
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                 CollectionReference collegeCollection = db.collection("halls"); //set a pointer the set of documents at the halls collection reference
                 collegeCollection.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {

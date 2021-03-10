@@ -24,6 +24,8 @@ public class SearchResults extends AppCompatActivity {
         searchButton3 = findViewById(R.id.searchButton3);
         backButton = findViewById(R.id.backButton);
 
+        collegeTitle.setText(CollegeSearch.theSearchedCollege);
+
         //Search, Profile, and Home Directions
         //Search
         searchButton3.setOnClickListener(new View.OnClickListener() {
