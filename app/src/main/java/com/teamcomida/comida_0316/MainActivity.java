@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     Button resendCode, changeProfileImage;
     ImageView profileImage, homeButton, profileButton, searchButton;
     StorageReference storageReference;
+    public static String globalUserCollege;
 
 
     @Override
@@ -131,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
                     email.setText(documentSnapshot.getString("email"));
                     theUsername.setText(documentSnapshot.getString("username"));
                     collegeMsg.setText(documentSnapshot.getString("college"));
+                    globalUserCollege = documentSnapshot.getString("college");
                 }
 
             }
