@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -85,6 +86,13 @@ public class SearchResults extends AppCompatActivity {
                             android.R.layout.simple_list_item_1, hallList);
                     hallListView.setAdapter(hallAdapter);
                 });
+
+        hallListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                startActivity(new Intent(getApplicationContext(), SearchDining_2.class));
+            }
+        });
 //System.out.println("MY halllist" + hallList);
         //hallAdapter = new ArrayAdapter<String>(SearchResults.this,
         //        android.R.layout.simple_list_item_1, hallList);
