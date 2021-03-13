@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class SearchDining_2 extends AppCompatActivity {
     ImageView homeButton4, searchButton4, profileButton4;
-    TextView diningHallChoice;
+    TextView diningHallChoice, myCollegeChoice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +22,10 @@ public class SearchDining_2 extends AppCompatActivity {
         profileButton4 = findViewById(R.id.profileButton4);
 
         diningHallChoice = findViewById(R.id.diningHallChoice);
-
         diningHallChoice.setText(SearchResults.theSearchedDiningHall);
+
+        myCollegeChoice = findViewById(R.id.myCollegeChoice);
+        myCollegeChoice.setText(CollegeSearch.theSearchedCollege);
 
 
         //Search, Profile, and Home Buttons
