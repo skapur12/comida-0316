@@ -34,6 +34,7 @@ public class SearchResults extends AppCompatActivity {
     ImageView homeButton3, profileButton3, searchButton3, backButton;
     ListView hallListView;
     List<String> hallList = new ArrayList<String>();
+    public static String theSearchedDiningHall;
 
 
     @Override
@@ -85,14 +86,18 @@ public class SearchResults extends AppCompatActivity {
                     hallAdapter = new ArrayAdapter<String>(SearchResults.this,
                             android.R.layout.simple_list_item_1, hallList);
                     hallListView.setAdapter(hallAdapter);
+
+
+                    hallListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            startActivity(new Intent(getApplicationContext(), SearchDining_2.class));
+                            theSearchedDiningHall = hallAdapter.getItem(position);
+                        }
+                    });
                 });
 
-        hallListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(getApplicationContext(), SearchDining_2.class));
-            }
-        });
+
 //System.out.println("MY halllist" + hallList);
         //hallAdapter = new ArrayAdapter<String>(SearchResults.this,
         //        android.R.layout.simple_list_item_1, hallList);
