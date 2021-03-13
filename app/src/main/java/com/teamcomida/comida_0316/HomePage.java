@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -101,6 +102,13 @@ public class HomePage extends AppCompatActivity {
                             android.R.layout.simple_list_item_1, homeList);
                     homeListView.setAdapter(homeAdapter);
                 });
+
+        homeListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                startActivity(new Intent(getApplicationContext(), HomeDining_2.class));
+            }
+        });
 
         //Search, Profile, and Home Directions
         //Search
