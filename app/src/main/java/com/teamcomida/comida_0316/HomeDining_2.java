@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class HomeDining_2 extends AppCompatActivity {
-    ImageView homeButton5, searchButton5, profileButton5;
+    ImageView homeButton5, searchButton5, profileButton5, backButton;
     TextView diningHallChoice, myCollegeChoice;
 
     @Override
@@ -20,6 +20,7 @@ public class HomeDining_2 extends AppCompatActivity {
         homeButton5 = findViewById(R.id.homeButton5);
         searchButton5 = findViewById(R.id.searchButton5);
         profileButton5 = findViewById(R.id.profileButton5);
+        backButton = findViewById(R.id.backButton);
 
         diningHallChoice = findViewById(R.id.diningHallChoice);
         diningHallChoice.setText(HomePage.homeSearchedDiningHall);
@@ -28,7 +29,7 @@ public class HomeDining_2 extends AppCompatActivity {
         myCollegeChoice.setText(MainActivity.globalUserCollege);
 
 
-        //Search, Profile, and Home Buttons
+        //Search, Profile, Home, and Back Buttons
         //Search
         searchButton5.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +48,14 @@ public class HomeDining_2 extends AppCompatActivity {
 
         //Home Button
         homeButton5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), HomePage.class));
+            }
+        });
+
+        //Back Button
+        backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), HomePage.class));
