@@ -6,9 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class HomeDining_2 extends AppCompatActivity {
     ImageView homeButton5, searchButton5, profileButton5;
+    TextView diningHallChoice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +20,11 @@ public class HomeDining_2 extends AppCompatActivity {
         homeButton5 = findViewById(R.id.homeButton5);
         searchButton5 = findViewById(R.id.searchButton5);
         profileButton5 = findViewById(R.id.profileButton5);
+
+        diningHallChoice = findViewById(R.id.diningHallChoice);
+
+        diningHallChoice.setText(HomePage.homeSearchedDiningHall);
+
 
         //Search, Profile, and Home Buttons
         //Search

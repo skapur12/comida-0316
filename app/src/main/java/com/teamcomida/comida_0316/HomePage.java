@@ -37,6 +37,7 @@ public class HomePage extends AppCompatActivity {
     ListView homeListView;
     List<String> homeList = new ArrayList<String>();
     public static String theSample;
+    public static String homeSearchedDiningHall;
 
 
     @Override
@@ -101,14 +102,18 @@ public class HomePage extends AppCompatActivity {
                     homeAdapter = new ArrayAdapter<String>(HomePage.this,
                             android.R.layout.simple_list_item_1, homeList);
                     homeListView.setAdapter(homeAdapter);
+
+
+                    homeListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            startActivity(new Intent(getApplicationContext(), HomeDining_2.class));
+                            homeSearchedDiningHall = homeAdapter.getItem(position);
+                        }
+                    });
                 });
 
-        homeListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(getApplicationContext(), HomeDining_2.class));
-            }
-        });
+
 
         //Search, Profile, and Home Directions
         //Search
