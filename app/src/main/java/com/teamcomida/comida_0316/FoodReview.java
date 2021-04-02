@@ -25,7 +25,7 @@ import java.util.HashMap;
 
 public class FoodReview extends AppCompatActivity {
     RatingBar overall, quality, hygiene, price, service;
-    TextView comments;
+    TextView comments, diningHallTextField, nameOfUsersCollege;
     ImageView homeButton1, searchButton1, profileButton1;
     Button submit, uploadPhoto;
 
@@ -45,6 +45,13 @@ public class FoodReview extends AppCompatActivity {
         comments.setMovementMethod(new ScrollingMovementMethod());
         submit = findViewById(R.id.submitButton);
         uploadPhoto = findViewById(R.id.uploadPhotoButton);
+
+        diningHallTextField = findViewById(R.id.diningHallTextField);
+        diningHallTextField.setText(HomePage.homeSearchedDiningHall);
+
+        nameOfUsersCollege = findViewById(R.id.nameOfUsersCollege);
+        nameOfUsersCollege.setText(MainActivity.globalUserCollege);
+
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,7 +101,13 @@ public class FoodReview extends AppCompatActivity {
 //            }
 //        });
 
-
+        //Submitting the Review
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), HomeDining_2.class));
+            }
+        });
 
 
 
