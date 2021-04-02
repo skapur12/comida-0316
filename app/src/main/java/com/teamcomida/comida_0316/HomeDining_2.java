@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -23,6 +24,7 @@ import java.util.Collection;
 public class HomeDining_2 extends AppCompatActivity {
     ImageView homeButton5, searchButton5, profileButton5, backButton;
     TextView diningHallChoice, myCollegeChoice;
+    Button writeAReview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +36,21 @@ public class HomeDining_2 extends AppCompatActivity {
         profileButton5 = findViewById(R.id.profileButton5);
         backButton = findViewById(R.id.backButton);
 
+        writeAReview = findViewById(R.id.writeAReview);
+
         diningHallChoice = findViewById(R.id.diningHallChoice);
         diningHallChoice.setText(HomePage.homeSearchedDiningHall);
 
         myCollegeChoice = findViewById(R.id.myCollegeChoice);
         myCollegeChoice.setText(MainActivity.globalUserCollege);
+
+        //Write A Review
+        writeAReview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), FoodReview.class));
+            }
+        });
 
 
 
