@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -33,6 +34,7 @@ public class SearchResults extends AppCompatActivity {
     TextView collegeTitle;
     ImageView homeButton3, profileButton3, searchButton3, backButton;
     ListView hallListView;
+    RatingBar ratingBar;
     List<String> hallList = new ArrayList<String>();
     public static String theSearchedDiningHall;
 
@@ -64,6 +66,36 @@ public class SearchResults extends AppCompatActivity {
 
         CollectionReference citiesRef = db.collection("halls2");
         Query query = citiesRef.whereEqualTo("college", collegeTitle.toString());
+
+        ratingBar = findViewById(R.id.ratingBar2);
+        ratingBar.setEnabled(false);
+        //query reviews in writtenReviews2 to get average star rating for college overall
+        db.collection("writtenReviews2").whereEqualTo("college", CollegeSearch.theSearchedCollege)
+                .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    System.out.println("successful");
+                    float totOverallStars = 0;
+                    int totReviews = 0;
+                    for (QueryDocumentSnapshot document: Objects.requireNonNull(task.getResult())) {
+                        //get necessary firestore field values for building string
+
+                        totOverallStars += Float.parseFloat(Objects.requireNonNull(document.getString("overallRating")));
+                        totReviews++;
+
+
+                    }
+                    ratingBar.setRating(totOverallStars / totReviews);
+
+
+                } else {
+                    System.out.println("task unsuccessful");
+                }
+            }
+        });
+
+
 
 
         db.collection("halls2")

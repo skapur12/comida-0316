@@ -31,6 +31,9 @@
         <activity
             android:name=".CollegeSearch"
             android:exported="true" />
+        <activity
+            android:name=".FoodReview"
+            android:exported="true" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

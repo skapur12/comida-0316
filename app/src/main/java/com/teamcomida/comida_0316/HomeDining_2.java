@@ -1,12 +1,24 @@
 package com.teamcomida.comida_0316;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.Collection;
 
 public class HomeDining_2 extends AppCompatActivity {
     ImageView homeButton5, searchButton5, profileButton5, backButton;
@@ -27,6 +39,7 @@ public class HomeDining_2 extends AppCompatActivity {
 
         myCollegeChoice = findViewById(R.id.myCollegeChoice);
         myCollegeChoice.setText(MainActivity.globalUserCollege);
+
 
 
         //Search, Profile, Home, and Back Buttons
@@ -63,3 +76,4 @@ public class HomeDining_2 extends AppCompatActivity {
         });
     }
 }
+

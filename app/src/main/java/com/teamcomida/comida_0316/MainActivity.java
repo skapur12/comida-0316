@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     Button resendCode, changeProfileImage;
     ImageView profileImage, homeButton, profileButton, searchButton;
     StorageReference storageReference;
-    public static String globalUserCollege;
+    public static String globalUserCollege, globalUserUsername, globalUserFullName;
 
 
     @Override
@@ -133,6 +133,8 @@ public class MainActivity extends AppCompatActivity {
                     theUsername.setText(documentSnapshot.getString("username"));
                     collegeMsg.setText(documentSnapshot.getString("college"));
                     globalUserCollege = documentSnapshot.getString("college");
+                    globalUserUsername = documentSnapshot.getString("username");
+                    globalUserFullName = documentSnapshot.getString("fName");
                 }
 
             }
