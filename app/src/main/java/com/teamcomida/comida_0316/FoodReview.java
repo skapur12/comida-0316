@@ -29,6 +29,7 @@ public class FoodReview extends AppCompatActivity {
     ImageView homeButton1, searchButton1, profileButton1;
     Button submit, uploadPhoto;
     ImageView backButtonFoodReview;
+    EditText user_food, user_comments;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,10 +43,15 @@ public class FoodReview extends AppCompatActivity {
         hygiene = findViewById(R.id.hygieneRatingBar);
         price = findViewById(R.id.priceRatingBar);
         service = findViewById(R.id.serviceRatingBar);
-        comments = findViewById(R.id.commentsTextField);
-        comments.setMovementMethod(new ScrollingMovementMethod());
+        comments = findViewById(R.id.commentsPlainText);
+
         submit = findViewById(R.id.submitButton);
         uploadPhoto = findViewById(R.id.uploadPhotoButton);
+
+        user_food = findViewById(R.id.foodNameTextField);
+
+        user_comments = findViewById(R.id.commentsTextField);
+        user_comments.setMovementMethod(new ScrollingMovementMethod());
 
         backButtonFoodReview = findViewById(R.id.backButtonFoodReview);
 
@@ -71,8 +77,11 @@ public class FoodReview extends AppCompatActivity {
                 float hygieneRating = hygiene.getRating();
                 float priceRating = price.getRating();
                 float serviceRating = service.getRating();
-                String comment = comments.getText().toString();
+                String comment = user_comments.getText().toString();
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+                String food = user_food.getText().toString();
+
                 HashMap<String, Object> data = new HashMap<>();
                 data.put("overallRating", Float.toString(overallRating));
                 data.put("quality", Float.toString(qualityRating));
@@ -80,11 +89,26 @@ public class FoodReview extends AppCompatActivity {
                 data.put("priceRating", Float.toString(priceRating));
                 data.put("service", Float.toString(serviceRating));
                 data.put("comments", comment);
-                data.put("name", "test123");     //replace with MainActivity.globalUserFullName when activity is connected
-                data.put("hallName", "test123"); //replace with HomePage.homeSearchedDiningHall when activity is connected
-                data.put("food", "test123");    //replace once food is created
-                data.put("college", "test123"); //replace with MainActivity.globalUserCollege when activity is connected
-                data.put("username", "test123"); //replace with MainActivity.globalUserUsername when activity is connected
+
+                data.put("name", MainActivity.globalUserFullName);     //replace with MainActivity.globalUserFullName when activity is connected
+                //data.put("hallName", "test123"); //replace with HomePage.homeSearchedDiningHall when activity is connected
+                data.put("food", food);    //replace once food is created
+               // data.put("college", "test123"); //replace with MainActivity.globalUserCollege when activity is connected
+                data.put("username", MainActivity.globalUserUsername); //replace with MainActivity.globalUserUsername when activity is connected
+
+                if (HomeDining_2.testingReview == 1) {
+                    data.put("hallName", HomePage.homeSearchedDiningHall);
+                    data.put("college", MainActivity.globalUserCollege);
+
+                    startActivity(new Intent(getApplicationContext(), HomeDining_2.class));
+
+                } else if (HomeDining_2.testingReview == 5) {
+                    data.put("hallName", SearchResults.theSearchedDiningHall);
+                    data.put("college", CollegeSearch.theSearchedCollege );
+
+                    startActivity(new Intent(getApplicationContext(), SearchDining_2.class));
+
+                }
 
                 String id = db.collection("writtenReviews2").document().getId();
                 db.collection("writtenReviews2").document(id).set(data).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -135,7 +159,7 @@ public class FoodReview extends AppCompatActivity {
 
 
         //Submitting the Review
-        if (HomeDining_2.testingReview == 1) {
+        /* if (HomeDining_2.testingReview == 1) {
             submit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -151,7 +175,7 @@ public class FoodReview extends AppCompatActivity {
                 }
             });
 
-        }
+        } */
 
 
 
