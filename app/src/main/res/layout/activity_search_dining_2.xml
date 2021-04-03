@@ -99,13 +99,17 @@
             android:layout_height="60dp"
             android:layout_marginTop="120dp"
             android:layout_gravity="center"
+            android:secondaryProgressTint="@color/purple_200"
+            android:progressBackgroundTint="@color/purple_200"
+            android:progressTint="@color/purple_200"
+
             />
 
 
     <TextView
         android:id="@+id/reviewTextView"
         android:layout_width="350dp"
-        android:layout_height="310dp"
+        android:layout_height="210dp"
         android:layout_gravity="center"
         android:scrollbars="vertical"
         android:text="reviews"
@@ -113,14 +117,16 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="100dp"
+        />
 
     <Button
         android:id="@+id/writeAReviewButton"
-        android:layout_width="147dp"
-        android:layout_height="87dp"
-        android:layout_marginStart="260dp"
-        android:layout_marginTop="-480dp"
+        android:layout_width="191dp"
+        android:layout_height="62dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="-300dp"
         android:text="Write a Review"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
