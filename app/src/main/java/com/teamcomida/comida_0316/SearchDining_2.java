@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -25,6 +26,8 @@ public class SearchDining_2 extends AppCompatActivity {
     ImageView homeButton4, searchButton4, profileButton4, backButton;
     TextView diningHallChoice, myCollegeChoice, reviewTextView;
     RatingBar rating;
+    Button writeAReviewButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,10 @@ public class SearchDining_2 extends AppCompatActivity {
 
         reviewTextView = findViewById(R.id.reviewTextView);
         reviewTextView.setMovementMethod(new ScrollingMovementMethod());
+
+        writeAReviewButton = findViewById(R.id.writeAReviewButton);
+
+        HomeDining_2.testingReview = 5;
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         CollectionReference reviewsCollection = db.collection("writtenReviews2");
@@ -88,6 +95,15 @@ public class SearchDining_2 extends AppCompatActivity {
                 }
             }
         });
+        //Review Button
+
+        writeAReviewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), FoodReview.class));
+            }
+        });
+
 
 
         //Search, Profile, Home, and Back Buttons

@@ -28,6 +28,7 @@ public class FoodReview extends AppCompatActivity {
     TextView comments, diningHallTextField, nameOfUsersCollege;
     ImageView homeButton1, searchButton1, profileButton1;
     Button submit, uploadPhoto;
+    ImageView backButtonFoodReview;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,11 +47,21 @@ public class FoodReview extends AppCompatActivity {
         submit = findViewById(R.id.submitButton);
         uploadPhoto = findViewById(R.id.uploadPhotoButton);
 
+        backButtonFoodReview = findViewById(R.id.backButtonFoodReview);
+
         diningHallTextField = findViewById(R.id.diningHallTextField);
-        diningHallTextField.setText(HomePage.homeSearchedDiningHall);
+        //diningHallTextField.setText(HomePage.homeSearchedDiningHall);
 
         nameOfUsersCollege = findViewById(R.id.nameOfUsersCollege);
-        nameOfUsersCollege.setText(MainActivity.globalUserCollege);
+        //nameOfUsersCollege.setText(MainActivity.globalUserCollege);
+
+        if (HomeDining_2.testingReview == 1) {
+            diningHallTextField.setText(HomePage.homeSearchedDiningHall);
+            nameOfUsersCollege.setText(MainActivity.globalUserCollege);
+        } else if (HomeDining_2.testingReview == 5) {
+            diningHallTextField.setText(SearchResults.theSearchedDiningHall);
+            nameOfUsersCollege.setText(CollegeSearch.theSearchedCollege);
+        }
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,13 +112,47 @@ public class FoodReview extends AppCompatActivity {
 //            }
 //        });
 
+        //Back Button Logic
+        if (HomeDining_2.testingReview == 1) {
+
+            backButtonFoodReview.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(getApplicationContext(), HomeDining_2.class));
+                }
+            });
+
+        } else if (HomeDining_2.testingReview == 5) {
+
+            backButtonFoodReview.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(getApplicationContext(), SearchDining_2.class));
+                }
+            });
+
+        }
+
+
         //Submitting the Review
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), HomeDining_2.class));
-            }
-        });
+        if (HomeDining_2.testingReview == 1) {
+            submit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(getApplicationContext(), HomeDining_2.class));
+                }
+            });
+
+        } else if (HomeDining_2.testingReview == 5) {
+            submit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(getApplicationContext(), SearchDining_2.class));
+                }
+            });
+
+        }
+
 
 
 

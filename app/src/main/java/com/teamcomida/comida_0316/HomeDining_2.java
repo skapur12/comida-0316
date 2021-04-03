@@ -26,10 +26,14 @@ public class HomeDining_2 extends AppCompatActivity {
     TextView diningHallChoice, myCollegeChoice;
     Button writeAReview;
 
+    public static int testingReview;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_dining_2);
+
+        testingReview = 1;
 
         homeButton5 = findViewById(R.id.homeButton5);
         searchButton5 = findViewById(R.id.searchButton5);
