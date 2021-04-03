@@ -111,15 +111,14 @@
         android:layout_width="350dp"
         android:layout_height="210dp"
         android:layout_gravity="center"
+        android:layout_marginTop="100dp"
         android:scrollbars="vertical"
         android:text="reviews"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="100dp"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/writeAReviewButton"

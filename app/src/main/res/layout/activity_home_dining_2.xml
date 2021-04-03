@@ -113,4 +113,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/homeReviews"
+        android:layout_width="350dp"
+        android:layout_height="210dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:scrollbars="vertical"
+        android:text="reviews"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
 </LinearLayout>

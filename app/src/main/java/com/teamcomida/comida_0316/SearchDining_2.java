@@ -58,7 +58,7 @@ public class SearchDining_2 extends AppCompatActivity {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         CollectionReference reviewsCollection = db.collection("writtenReviews2");
         reviewsCollection.whereEqualTo("college", CollegeSearch.theSearchedCollege)
-                .whereEqualTo("hallName", SearchResults.theSearchedDiningHall).get()
+                .whereEqualTo("hallName", HomePage.homeSearchedDiningHall).get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
