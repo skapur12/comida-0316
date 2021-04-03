@@ -21,7 +21,7 @@
         android:id="@+id/homeButtonFoodReview"
         android:layout_width="131dp"
         android:layout_height="120dp"
-        android:layout_marginTop="632dp"
+        android:layout_marginTop="570dp"
         android:background="#000000"
         android:cropToPadding="true"
         android:padding="5dp"
@@ -36,7 +36,7 @@
         android:id="@+id/profileButtonFoodReview"
         android:layout_width="132dp"
         android:layout_height="120dp"
-        android:layout_marginTop="632dp"
+        android:layout_marginTop="570dp"
         android:background="#000000"
         android:cropToPadding="true"
         android:padding="5dp"
@@ -51,7 +51,7 @@
         android:id="@+id/searchButtonFoodReview"
         android:layout_width="136dp"
         android:layout_height="120dp"
-        android:layout_marginTop="632dp"
+        android:layout_marginTop="570dp"
         android:background="#000000"
         android:cropToPadding="true"
         android:padding="5dp"
@@ -116,8 +116,8 @@
 
     <TextView
         android:id="@+id/ratingsPlainText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="345dp"
+        android:layout_height="32dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Ratings"
@@ -127,7 +127,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.265" />
+        app:layout_constraintVertical_bias="0.244" />
 
     <TextView
         android:id="@+id/overallPlainText"
@@ -142,7 +142,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.348" />
+        app:layout_constraintVertical_bias="0.32" />
 
     <TextView
         android:id="@+id/qualityPlainText"
@@ -157,7 +157,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.392" />
+        app:layout_constraintVertical_bias="0.374" />
 
     <TextView
         android:id="@+id/hygienePlainText"
@@ -172,7 +172,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.468" />
+        app:layout_constraintVertical_bias="0.445" />
 
     <TextView
         android:id="@+id/pricePlainText"
@@ -187,7 +187,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.544" />
+        app:layout_constraintVertical_bias="0.514" />
 
     <TextView
         android:id="@+id/servicePlainText"
@@ -202,7 +202,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.585" />
+        app:layout_constraintVertical_bias="0.571" />
 
     <RatingBar
         android:id="@+id/overallRatingBar"
@@ -215,7 +215,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.344" />
+        app:layout_constraintVertical_bias="0.32" />
 
     <RatingBar
         android:id="@+id/priceRatingBar"
@@ -228,7 +228,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.528" />
+        app:layout_constraintVertical_bias="0.512" />
 
     <RatingBar
         android:id="@+id/qualityRatingBar"
@@ -241,7 +241,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.402" />
+        app:layout_constraintVertical_bias="0.383" />
 
     <RatingBar
         android:id="@+id/hygieneRatingBar"
@@ -254,7 +254,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.47" />
+        app:layout_constraintVertical_bias="0.445" />
 
     <RatingBar
         android:id="@+id/serviceRatingBar"
@@ -297,7 +297,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.671" />
+        app:layout_constraintVertical_bias="0.623" />
 
     <EditText
         android:id="@+id/commentsTextField"
@@ -311,7 +311,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.76" />
+        app:layout_constraintVertical_bias="0.695" />
 
     <Button
         android:id="@+id/submitButton"
@@ -320,10 +320,10 @@
         android:text="Submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintHorizontal_bias="0.802"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.855" />
+        app:layout_constraintVertical_bias="0.774" />
 
     <Button
         android:id="@+id/uploadPhotoButton"
@@ -332,10 +332,10 @@
         android:text="Upload Photo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintHorizontal_bias="0.108"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.86" />
+        app:layout_constraintVertical_bias="0.772" />
 
     <TextView
         android:id="@+id/nameOfUsersCollege"

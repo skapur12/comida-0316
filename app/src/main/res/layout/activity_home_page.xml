@@ -12,7 +12,7 @@
         android:id="@+id/homeButton2"
         android:layout_width="131dp"
         android:layout_height="120dp"
-        android:layout_marginTop="637dp"
+        android:layout_marginTop="560dp"
         android:background="#000000"
         android:cropToPadding="true"
         android:padding="5dp"
@@ -63,7 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="-682dp"
+        android:layout_marginTop="-642dp"
         android:text="TextView"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -84,8 +84,7 @@
         android:id="@+id/ratingBar"
         android:layout_width="244dp"
         android:layout_height="60dp"
-        android:layout_marginTop="-450dp"
         android:layout_gravity="center"
-        />
+        android:layout_marginTop="-410dp" />
 
 </LinearLayout>
