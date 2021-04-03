@@ -75,6 +75,7 @@ public class HomeDining_2 extends AppCompatActivity {
                             for (QueryDocumentSnapshot document: Objects.requireNonNull(task.getResult())) {
                                 //get necessary firestore field values for building string
                                 String name = document.getString("name");
+                                String food = document.getString("food");
                                 String overallStars = document.getString("overallRating");
                                 String priceRating = document.getString("priceRating");
                                 String qualityRating = document.getString("quality");
@@ -83,8 +84,8 @@ public class HomeDining_2 extends AppCompatActivity {
                                 String comments = document.getString("comments");
 
                                 //build current review string
-                                String currReview = String.format("\tName: %s\n\n\tOverall: %s/5.0\n\tPrice: %s/5.0" +
-                                                "\n\tQuality: %s/5.0\n\tService: %s/5.0\n\tHygiene: %s/5.0\n\tAdditional Comments: %s\n\n\n\n", name, overallStars,
+                                String currReview = String.format("\tName: %s\n\n\tFood: %s\n\tOverall: %s/5.0\n\tPrice: %s/5.0" +
+                                                "\n\tQuality: %s/5.0\n\tService: %s/5.0\n\tHygiene: %s/5.0\n\tAdditional Comments: %s\n\n\n\n", name, food, overallStars,
                                         priceRating, qualityRating, serviceRating, hygieneRating, comments);
 
                                 totOverallStars += Float.parseFloat(Objects.requireNonNull(document.getString("overallRating")));
