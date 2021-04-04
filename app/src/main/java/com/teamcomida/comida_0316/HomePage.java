@@ -1,5 +1,6 @@
 package com.teamcomida.comida_0316;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,8 +12,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
@@ -21,6 +25,7 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +40,7 @@ public class HomePage extends AppCompatActivity {
     String userId;
     FirebaseAuth fAuth;
     ListView homeListView;
+    RatingBar ratingBar;
     List<String> homeList = new ArrayList<String>();
     public static String theSample;
     public static String homeSearchedDiningHall;
@@ -47,17 +53,55 @@ public class HomePage extends AppCompatActivity {
 
         //FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+
         homeButton2 = findViewById(R.id.homeButton2);
         searchButton2 = findViewById(R.id.searchButton2);
         profileButton2 = findViewById(R.id.profileButton2);
         collegeChoice = findViewById(R.id.collegeChoice);
         homeListView = findViewById(R.id.homeListView);
+
+        ratingBar = findViewById(R.id.ratingBar);
+        ratingBar.setEnabled(false);
+
         fAuth = FirebaseAuth.getInstance();
 
         fStore = FirebaseFirestore.getInstance();
         userId = fAuth.getCurrentUser().getUid();
 
         CollectionReference halls2 = fStore.collection("halls2");
+
+
+        //NEW INFO
+
+        //query reviews in writtenReviews2 to get average star rating for college overall
+        db.collection("writtenReviews2").whereEqualTo("college", MainActivity.globalUserCollege)
+                .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    System.out.println("successful");
+                    float totOverallStars = 0;
+                    int totReviews = 0;
+                    for (QueryDocumentSnapshot document: Objects.requireNonNull(task.getResult())) {
+                        //get necessary firestore field values for building string
+
+                        totOverallStars += Float.parseFloat(Objects.requireNonNull(document.getString("overallRating")));
+                        totReviews++;
+
+
+                    }
+                    ratingBar.setRating(totOverallStars / totReviews);
+
+
+                } else {
+                    System.out.println("task unsuccessful");
+                }
+            }
+        });
+
+        //END NEW INFO
 
 
         DocumentReference documentReference = fStore.collection("users").document(userId);
