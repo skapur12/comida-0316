@@ -52,6 +52,8 @@ public class SearchDining_2 extends AppCompatActivity {
         reviewTextView.setMovementMethod(new ScrollingMovementMethod());
 
         writeAReviewButton = findViewById(R.id.writeAReviewButton);
+        writeAReviewButton.setVisibility(View.GONE);
+
 
         HomeDining_2.testingReview = 5;
 
@@ -70,6 +72,7 @@ public class SearchDining_2 extends AppCompatActivity {
                     for (QueryDocumentSnapshot document: Objects.requireNonNull(task.getResult())) {
                         //get necessary firestore field values for building string
                         String name = document.getString("name");
+                        String username = document.getString("username");
                         String food = document.getString("food");
                         String overallStars = document.getString("overallRating");
                         String priceRating = document.getString("priceRating");
@@ -79,8 +82,8 @@ public class SearchDining_2 extends AppCompatActivity {
                         String comments = document.getString("comments");
 
                         //build current review string
-                        String currReview = String.format("\n\n\tName: %s\n\n\tFood: %s\n\n\tOverall: %s/5.0\n\tPrice: %s/5.0" +
-                                "\n\tQuality: %s/5.0\n\tService: %s/5.0\n\tHygiene: %s/5.0\n\tAdditional Comments: %s\n", name, food, overallStars,
+                        String currReview = String.format("\n\n\tUsername: %s\n\n\tFood: %s\n\n\tOverall: %s/5.0\n\tPrice: %s/5.0" +
+                                "\n\tQuality: %s/5.0\n\tService: %s/5.0\n\tHygiene: %s/5.0\n\tAdditional Comments: %s\n", username, food, overallStars,
                                 priceRating, qualityRating, serviceRating, hygieneRating, comments);
 
                         totOverallStars += Float.parseFloat(Objects.requireNonNull(document.getString("overallRating")));
@@ -99,12 +102,21 @@ public class SearchDining_2 extends AppCompatActivity {
         });
         //Review Button
 
-        writeAReviewButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), FoodReview.class));
-            }
-        });
+        if (CollegeSearch.theSearchedCollege.equals(MainActivity.globalUserCollege)) {
+
+            writeAReviewButton.setVisibility(View.VISIBLE); //To set visible
+
+
+            writeAReviewButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(getApplicationContext(), FoodReview.class));
+                }
+            });
+
+        }
+
+
 
 
 
