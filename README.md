@@ -1,5 +1,10 @@
 # comida-0316
 Junior Design Project (Comida) for Team 0316 at Georgia Tech, Fall 2020-Spring 2021
+&nbsp;
+
+Comida is a mobile Android application that allows college students to review food served at their dining halls.
+&nbsp;
+&nbsp;
 
 **Release Notes version Comida 1.0**
 
