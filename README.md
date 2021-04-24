@@ -6,7 +6,6 @@ Comida is a mobile Android application that allows college students to review fo
 
 &nbsp;
 &nbsp;
-&nbsp;
 
 **Release Notes version Comida 1.0**
 
