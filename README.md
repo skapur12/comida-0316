@@ -1,7 +1,7 @@
 # comida-0316
 Junior Design Project (Comida) for Team 0316 at Georgia Tech, Fall 2020-Spring 2021
 
-Release Notes version Comida 1.0
+**Release Notes version Comida 1.0**
 
 NEW FEATURES
 - Added registration and login features
@@ -19,7 +19,7 @@ KNOWN BUGS
 
 
 
-Install Guide Comida 1.0
+**Install Guide Comida 1.0**
 
 PRE-REQUISITES
 - You must have an Android smartphone.
