@@ -2,6 +2,7 @@
 Junior Design Project (Comida) for Team 0316 at Georgia Tech, Fall 2020-Spring 2021
 
 Release Notes version Comida 1.0
+
 NEW FEATURES
 - Added registration and login features
 - Added a user profile screen
