@@ -17,7 +17,10 @@ KNOWN BUGS
 - Reviews do not appear in reverse chronological order (which they should)
 - Even if a user presses the ‘Delete Account’ button, their account is not deleted from the database.
 
+
+
 Install Guide Comida 1.0
+
 PRE-REQUISITES
 - You must have an Android smartphone.
 
