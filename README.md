@@ -19,7 +19,7 @@ KNOWN BUGS
 
 
  <br />
-  <br />
+ <br />
 **Install Guide Comida 1.0**
 
 PRE-REQUISITES
