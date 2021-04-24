@@ -18,7 +18,8 @@ KNOWN BUGS
 - Even if a user presses the ‘Delete Account’ button, their account is not deleted from the database.
 
 
-
+ <br />
+  <br />
 **Install Guide Comida 1.0**
 
 PRE-REQUISITES
