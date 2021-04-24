@@ -49,3 +49,9 @@ RUNNING APPLICATION
 - Navigate to the home screen of your device.
 - Select the Comida app icon to launch the application.
 
+TROUBLESHOOTING
+- For best results, it is recommended that before you begin installing an application, your phone has a battery level of at least 50% and you clear your phone’s history.
+- After downloading the APK, a message saying that Google Drive cannot scan the file for viruses may pop up. If this happens, press ‘Download anyway;’ the app is virus-free.
+- If any part of the installation process fails, restart the device and try again.
+
+
