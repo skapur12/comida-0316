@@ -46,7 +46,6 @@ public class FoodReview extends AppCompatActivity {
         comments = findViewById(R.id.commentsPlainText);
 
         submit = findViewById(R.id.submitButton);
-        uploadPhoto = findViewById(R.id.uploadPhotoButton);
 
         user_food = findViewById(R.id.foodNameTextField);
 
